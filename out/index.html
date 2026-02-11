@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知乎热榜 · 2026-02-11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:opsz,wght@6..72,300;6..72,500;6..72,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #0f1012;
+      --bg-2: #1a1b1f;
+      --ink: #f4f1ea;
+      --muted: #b5b0a5;
+      --accent: #f4b942;
+      --card: rgba(255,255,255,0.06);
+      --stroke: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Newsreader", serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 20% -10%, #2a261c 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 120% 0%, #2a1f2f 0%, transparent 55%),
+                  linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      min-height: 100vh;
+    }
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    .hero {
+      display: grid;
+      gap: 16px;
+      padding: 28px 28px 20px;
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+    .kicker {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 3px;
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(40px, 8vw, 72px);
+      letter-spacing: 2px;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.05);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .data-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(244,185,66,0.5);
+    }
+    .list {
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 18px;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover { transform: translateY(-3px); border-color: rgba(244,185,66,0.45); }
+    .rank {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 26px;
+      color: var(--accent);
+      width: 44px;
+      text-align: center;
+    }
+    .title {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .meta {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(244,185,66,0.5);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.4px;
+    }
+    .thumb {
+      width: 120px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+    }
+    .thumb.placeholder {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    }
+    @media (max-width: 720px) {
+      .card { grid-template-columns: auto 1fr; }
+      .thumb { grid-column: 1 / -1; width: 100%; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker">ZH HOT</div>
+      <h1>知乎热榜</h1>
+      <div class="sub">
+        <span class="pill">2026-02-11</span>
+        <span class="pill">更新时间 2026/2/11 21:44:16</span>
+        <a class="data-link" href="out/data/2026-02-11.json">查看原始数据</a>
+      </div>
+    </header>
+
+    <ul class="list">
+      
+        <li class="card">
+          <div class="rank">01</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004525707066306750" target="_blank" rel="noopener noreferrer">Seedance 2.0 将对视频行业带来怎样的冲击与颠覆？为什么冯骥称深感震撼的同时也有一丝迷茫？</a>
+            <div class="meta">
+              <span class="badge">1161 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-4687339c0eafc946c8721ea17ecec55e_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">02</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/36246233" target="_blank" rel="noopener noreferrer">来做客的孩子临走时带走几只玩具，我的孩子抗拒并一直哭，要怎么开导？</a>
+            <div class="meta">
+              <span class="badge">612 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/fd1482c10732eb8a7d3a4a52a84c8f55_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">03</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/281982209" target="_blank" rel="noopener noreferrer">你在清华上过最牛的课是什么？</a>
+            <div class="meta">
+              <span class="badge">334 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/80/v2-a505a9c3a304034dfb9c63d2f736dfa4_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">04</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004578484396189205" target="_blank" rel="noopener noreferrer">网友称车厘子不光价格崩了，口感和味道也崩了，很难买到好吃的车厘子，你有这种感觉吗？为什么会这样？</a>
+            <div class="meta">
+              <span class="badge">315 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/50/v2-1a834392095a076a4c7b04bf81fd8412_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">05</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004074918078326064" target="_blank" rel="noopener noreferrer">网传某女生的北京 19 天的旅游计划引热议，这个行程强度合理吗？值得参考吗？</a>
+            <div class="meta">
+              <span class="badge">303 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic3.zhimg.com/v2-35921893d61f9a508edc93ef4a1768e0_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">06</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004629058894389561" target="_blank" rel="noopener noreferrer">周星驰经纪人质疑短视频平台对 AI 生成视频侵权放任不管，这触犯了哪些法律红线？平台该如何管理？</a>
+            <div class="meta">
+              <span class="badge">231 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/v2-18ffa1da73db68efcaed6d46714444c9_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">07</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004519940980511952" target="_blank" rel="noopener noreferrer">停产 12 年后奇瑞 QQ 回归，奇瑞董事长称「要把它打造成中国的 MINI」，它能否延续当年热度？</a>
+            <div class="meta">
+              <span class="badge">218 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/50/v2-f2662550d93baa6a66e9a795aa590162_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">08</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003815708405040927" target="_blank" rel="noopener noreferrer">老一辈为何对子女「睡懒觉」有很强的执念，这反映了怎样的代际差异？</a>
+            <div class="meta">
+              <span class="badge">212 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-9f97d71cd75bac4d0f866d5791fc1ebf_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">09</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/19656357" target="_blank" rel="noopener noreferrer">李阳疯狂英语为什么没落了？</a>
+            <div class="meta">
+              <span class="badge">197 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/80/v2-ded8d755a9a52e0a372fd9b1b8bbedeb_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">10</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004249255074820541" target="_blank" rel="noopener noreferrer">谷爱凌曾经历严重脑震荡，医生不确定她能否醒来，这对她职业生涯有哪些影响？滑雪运动风险有多大？</a>
+            <div class="meta">
+              <span class="badge">196 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-d1b7cdcbd3fac81bcd13c7368cc3101e_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">11</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1999493147412169200" target="_blank" rel="noopener noreferrer">刚被北京的休学率惊到，又看到上海学生的抑郁检出率，我们是不是正在养出一代「低电量的孩子」？</a>
+            <div class="meta">
+              <span class="badge">188 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-974692ac2198dc20516ea7dd9b26c78b_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">12</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2002406519971476440" target="_blank" rel="noopener noreferrer">长征十号与梦舟飞船首次飞行试验任务成功，有哪些看点？此次试验进行了哪些技术验证？</a>
+            <div class="meta">
+              <span class="badge">179 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-0896ba8fc1ae3c0be94f86f03c47d8db_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">13</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004787281341457255" target="_blank" rel="noopener noreferrer">25-26 赛季德甲乒乓球联赛，樊振东 3:1 鲍姆，一单两分率队取胜，如何评价本场比赛？</a>
+            <div class="meta">
+              <span class="badge">131 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/50/v2-88e7a1342927042f274a4aa33c43fca3_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">14</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/598606116" target="_blank" rel="noopener noreferrer">为什么明明是我在照顾猫，但是猫却更喜欢我老公？</a>
+            <div class="meta">
+              <span class="badge">121 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-0cba143380593b047eefb83efa27c3bd_400x224.webp?source=1940ef5c" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">15</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/topic/1996571927494485394/pin20" target="_blank" rel="noopener noreferrer">看看孩子们画的马，传递了孩子什么样的「小情绪」？	</a>
+            <div class="meta">
+              <span class="badge">114 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-08a17e6e9f61f19576ddbdc2f36b5d70_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">16</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004524090598323141" target="_blank" rel="noopener noreferrer">为什么 AI 会建议我走路去洗车？AI 还提出过什么壮举？</a>
+            <div class="meta">
+              <span class="badge">107 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-824b503cc87f5fffa56e24b1c50c79ef_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">17</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004487775068647845" target="_blank" rel="noopener noreferrer">阶跃星辰把刚发布的大模型命名为 Flash，你怎么看？</a>
+            <div class="meta">
+              <span class="badge">105 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-a5f9d0c22724663979214e9d75df2dab_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">18</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003819009846556196" target="_blank" rel="noopener noreferrer">2026 年了，现在中国科研在世界上是什么地位？</a>
+            <div class="meta">
+              <span class="badge">99 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic2.zhimg.com/50/v2-6ed57672ba75e8f943b84fc9e7d4b289_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">19</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004518910720963343" target="_blank" rel="noopener noreferrer">多枚米兰冬奥会奖牌损坏，组委会称会高度关注，具体是怎么回事？为何最近欧美主办大赛的奖牌频频出问题？</a>
+            <div class="meta">
+              <span class="badge">98 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <div class="thumb placeholder"></div>
+        </li>
+
+        <li class="card">
+          <div class="rank">20</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004454058975519787" target="_blank" rel="noopener noreferrer">如何评价有传闻称玛利亚 - 凯莉在冬奥开幕式假唱，开幕式导演避谈此事，但承认「有提前录音版本」？</a>
+            <div class="meta">
+              <span class="badge">96 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-6f6fff6d8f0dfcadbe63ba3c1a56dfac_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">21</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003053229764732430" target="_blank" rel="noopener noreferrer">有哪些和 AI 的对话瞬间，让你觉得人类还没有一败涂地？</a>
+            <div class="meta">
+              <span class="badge">94 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-d084dc1f37f80d658810d78332be3eed_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">22</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2000186719828402236" target="_blank" rel="noopener noreferrer">哪些文艺作品里的「马」形象，让你觉得最印象深刻？</a>
+            <div class="meta">
+              <span class="badge">90 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-c9d5ad6f50f56af2996e599006a943fd_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">23</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1999487696737957463" target="_blank" rel="noopener noreferrer">时隔 18 年《职工带薪年休假条例》首次修订，你期待有哪些改变?</a>
+            <div class="meta">
+              <span class="badge">84 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-1f49b407ccdda7dbd21c106decdae0cd_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">24</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2000250235935486626" target="_blank" rel="noopener noreferrer">在王朝更迭如走马灯的五代十国，普通人真的还有「日常生活」吗？</a>
+            <div class="meta">
+              <span class="badge">81 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/50/v2-9ccb407e87e408815a004e95d06f5862_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">25</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1913980568154149322" target="_blank" rel="noopener noreferrer">男生帮女儿倒垃圾，班主任不允许，说自己的事自己做，让女儿把垃圾捡回来重扔，妈妈觉得老师没事找事，谁对？</a>
+            <div class="meta">
+              <span class="badge">77 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-b4af0dacc2b3750b8285b1a58453f03e_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">26</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/20064565" target="_blank" rel="noopener noreferrer">怎样做到「不抱怨」？</a>
+            <div class="meta">
+              <span class="badge">75 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <div class="thumb placeholder"></div>
+        </li>
+
+        <li class="card">
+          <div class="rank">27</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003343394425022402" target="_blank" rel="noopener noreferrer">员工获得特等奖苹果手机后，发现盒子里只有发票和砖头，这种情况是你会如何处理？</a>
+            <div class="meta">
+              <span class="badge">74 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-31d7507b4c781a9adcb9e9d92df6cd27_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">28</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/31652990" target="_blank" rel="noopener noreferrer">中国篮球为什么出不了顶尖后卫？</a>
+            <div class="meta">
+              <span class="badge">74 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-8ece57703c8a2f828a0504887b4b8622_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">29</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2000194562300278687" target="_blank" rel="noopener noreferrer">古今中外，有哪些跟马有关的神话故事？</a>
+            <div class="meta">
+              <span class="badge">73 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/80/v2-9214ed119cc0c2a24e60e96aa3d5aa06_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">30</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/56079386" target="_blank" rel="noopener noreferrer">现行的高中语文教育有哪些方面不够合理？</a>
+            <div class="meta">
+              <span class="badge">71 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <div class="thumb placeholder"></div>
+        </li>
+
+        <li class="card">
+          <div class="rank">31</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004857998149981743" target="_blank" rel="noopener noreferrer">据国家统计局公布 1 月 CPI 环比上涨 0.2%，PPI 环比上涨 0.4%，如何解读？</a>
+            <div class="meta">
+              <span class="badge">91 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-9a198c96352f3d0118a1e4964c5b0f85_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">32</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004533276505814708" target="_blank" rel="noopener noreferrer">小学教师用手背打学生脸维护课堂秩序，遭家长民事诉讼，作为老师，如果遇到这种情况，最好的管理方式是什么？</a>
+            <div class="meta">
+              <span class="badge">79 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-975a4e9eaeb2d7ab4e90a112a24eefda_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">33</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003262151616398209" target="_blank" rel="noopener noreferrer">有没有大神帮我分析下我儿子到底在想什么？</a>
+            <div class="meta">
+              <span class="badge">66 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <div class="thumb placeholder"></div>
+        </li>
+
+        <li class="card">
+          <div class="rank">34</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1989004032623286056" target="_blank" rel="noopener noreferrer">如何评价侯明昊、古力娜扎主演的古装剧《玉茗茶骨》？</a>
+            <div class="meta">
+              <span class="badge">66 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic2.zhimg.com/50/v2-7ab52be9c3964eb99ed1c6c48404e781_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">35</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/566336595" target="_blank" rel="noopener noreferrer">饺子馅怎么样调更加美味？</a>
+            <div class="meta">
+              <span class="badge">63 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-647edb7e6e1bbbe1b28112a233c3d515_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">36</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/23480772" target="_blank" rel="noopener noreferrer">怎样解读《贫嘴张大民的幸福生活》？</a>
+            <div class="meta">
+              <span class="badge">59 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-140b2a7ada8dbcf56cddcee02fa9e099_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">37</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/488370181" target="_blank" rel="noopener noreferrer">《觉醒年代》里车夫们的收入能吃得起吃涮羊肉，这个设定有根据吗？</a>
+            <div class="meta">
+              <span class="badge">59 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-b4b249dad3cc475d52abbb1ed92506b5_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">38</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004971546536585165" target="_blank" rel="noopener noreferrer">如何评价 2 月 11 日上线的 DeepSeek 新模型？</a>
+            <div class="meta">
+              <span class="badge">327 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-30371eaa97520c358d2270eb6b6f0187_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">39</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004607550855848192" target="_blank" rel="noopener noreferrer">青海一事业编岗位招聘要求「熟悉并能独立抓捕野牦牛」引热议，为啥招聘会出现这种特殊技能要求，合理吗？</a>
+            <div class="meta">
+              <span class="badge">319 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-f27bfc98e6fccf031b58cb3112f274f8_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">40</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004960170007107386" target="_blank" rel="noopener noreferrer">于东来宣布年后退休，转为顾问，胖东来工作由决策委员会主持，如何看待这一选择？将如何影响胖东来未来发展？</a>
+            <div class="meta">
+              <span class="badge">269 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-bd87bbcb427e59ec32767e7159bb3028_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">41</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004662806780338439" target="_blank" rel="noopener noreferrer">84 岁吉姆·罗杰斯清空美股，坚定持有金银铜称要留给后代，预言下次危机是其一生中最惨烈危机，如何解读？</a>
+            <div class="meta">
+              <span class="badge">238 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-e281bf1a358f4f8c16620e2780be2b8a_400x224.webp?source=2c26e567" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">42</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004152533778659207" target="_blank" rel="noopener noreferrer">贺娇龙坠马后「意识清醒还能说话」，坠马到底多危险？普通人怎么判断摔倒后是不是需要紧急就医？</a>
+            <div class="meta">
+              <span class="badge">207 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-48bc33cad12c44708a64c5e7567b5edf_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">43</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2002842696365143183" target="_blank" rel="noopener noreferrer">广东 6 岁女孩炫耀「假期很闲」引网友寄作业和戒尺，如何看待这种「玩笑」？</a>
+            <div class="meta">
+              <span class="badge">199 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/50/v2-3fbe68d503503b2f51e0666e4bfa7d41_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">44</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004936861781600011" target="_blank" rel="noopener noreferrer">「最快女护士」张水华离职后首次与品牌签约，品牌方称欣赏她敢于为梦想付出，她的商业价值究竟有多大？</a>
+            <div class="meta">
+              <span class="badge">188 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-2f4de43e5c449dfb4679eb53bdf16df7_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">45</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004548766661830319" target="_blank" rel="noopener noreferrer">击败谷爱凌夺冠的格雷莫德称「拔罐真的有用」，对此你怎么看，西方在接受中医方面，是否比我们更现实主义？</a>
+            <div class="meta">
+              <span class="badge">174 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/v2-37695844b8369b186f950e7e12c0ae99_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">46</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004565156580049390" target="_blank" rel="noopener noreferrer">腾讯是在把 AI 泛娱乐生态拱手让给字节跳动吗？</a>
+            <div class="meta">
+              <span class="badge">169 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/v2-4bad2bdad57f7c5daaf83ad22dacbe7f_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">47</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1997951146183112114" target="_blank" rel="noopener noreferrer">王宝强称「电影失败是导演的问题，别去找任何理由」，如何看待他的导演理念？</a>
+            <div class="meta">
+              <span class="badge">169 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic2.zhimg.com/50/v2-f9af3bb56199d8e4eb8a31279a137e79_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">48</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004212143084560460" target="_blank" rel="noopener noreferrer">年轻人开始流行去村里「搂」席，网络上经常出现流水席的直播，农村大席为啥如此受欢迎？</a>
+            <div class="meta">
+              <span class="badge">126 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-9537579ad41c4b6de1323782555a045d_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">49</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004070904267817959" target="_blank" rel="noopener noreferrer">澳洲 13 岁游泳考试不及格男孩游泳 4 小时救回全家人性命，哪些地方触动了你？</a>
+            <div class="meta">
+              <span class="badge">120 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-86dc1ea01141d663a3c634240a3597d4_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">50</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003846940299847117" target="_blank" rel="noopener noreferrer">15 元无人洗车机洗坏上百万的保时捷，对方只肯承担 1000 元，此事故中责任应如何划分？车主能如何维权？</a>
+            <div class="meta">
+              <span class="badge">118 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <div class="thumb placeholder"></div>
+        </li>
+
+        <li class="card">
+          <div class="rank">51</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004614069475370299" target="_blank" rel="noopener noreferrer">报道称绝味鸭脖上市来首次年度亏损，股票被 ST，一年半关店超 4000 家、日均关 7 家，为何消费者不买账了？</a>
+            <div class="meta">
+              <span class="badge">116 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic2.zhimg.com/50/v2-8f0c2c88bb819838480634c311e5067d_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">52</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2003026826923095265" target="_blank" rel="noopener noreferrer">为什么北方的小年和南方的小年并不在同一天呢？</a>
+            <div class="meta">
+              <span class="badge">104 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/v2-dedeae3af62adbcd3df1a3e7a455ed35_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">53</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004559757655168835" target="_blank" rel="noopener noreferrer">华为余承东宣布问界两年内将冲刺 200 万辆总销量，这一目标前景如何？可能通过哪些策略实现？</a>
+            <div class="meta">
+              <span class="badge">103 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-f9b4563280a803d4d3df746e48e96313_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">54</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004458536801953776" target="_blank" rel="noopener noreferrer">领导在我获得先进个人奖后说应该请同事吃饭，并表示后悔没推荐她自己，她的真实意图是什么？</a>
+            <div class="meta">
+              <span class="badge">98 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/v2-fe92ee2a59b7def33441bec2d219a840_400x224.png" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">55</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004865365348415333" target="_blank" rel="noopener noreferrer">加拿大不列颠哥伦比亚省发生枪击事件，已致 10 人死亡，目前情况如何？</a>
+            <div class="meta">
+              <span class="badge">98 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-89ad54d02407a00949201fb07f846525_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">56</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2001677538703983610" target="_blank" rel="noopener noreferrer">《明日方舟：终末地》开服一段时间了，你们觉得好玩吗？</a>
+            <div class="meta">
+              <span class="badge">97 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-24a568fde587fd4369789d8edb9be3cb_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">57</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2004847818641282525" target="_blank" rel="noopener noreferrer">如何评价福建省正式官宣举办城市足球联赛「闽超」？</a>
+            <div class="meta">
+              <span class="badge">85 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic1.zhimg.com/50/v2-e152d50f2f755515adcc2ffdd13d76c4_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">58</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2001459102778430375" target="_blank" rel="noopener noreferrer">我是初三生，现在成绩不太可能进高中了，但是在自学编程，大家能否给一点建议？</a>
+            <div class="meta">
+              <span class="badge">82 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://picx.zhimg.com/80/v2-789fccc2eef309904dfc6e55d5e9621e_400x224.webp?source=1def8aca" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">59</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/665797328" target="_blank" rel="noopener noreferrer">据说 go 和 c#的开发者都说自己比较节省内存，你们认为呢？</a>
+            <div class="meta">
+              <span class="badge">76 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic4.zhimg.com/50/v2-d5af26dd7ffd45648861be65171b9db1_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">60</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/2001660645297395240" target="_blank" rel="noopener noreferrer">孩子寒假用 AI 写作业让我抓包了，这种「高科技作弊」该怎么管？</a>
+            <div class="meta">
+              <span class="badge">73 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/50/v2-92caee15fc754424fb2793fe3d5e732e_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">61</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/629214723" target="_blank" rel="noopener noreferrer">排骨为什么比纯猪肉贵？</a>
+            <div class="meta">
+              <span class="badge">71 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pic2.zhimg.com/50/v2-0f787bc432728c18442c4cd12c058b0d_400x224.jpg" alt="" loading="lazy">
+        </li>
+
+        <li class="card">
+          <div class="rank">62</div>
+          <div class="content">
+            <a class="title" href="https://www.zhihu.com/question/1999897760019806033" target="_blank" rel="noopener noreferrer">如何看待 2026 年春节前的股市市场？</a>
+            <div class="meta">
+              <span class="badge">71 万 热度</span>
+              <span class="dot">&middot;</span>
+              <span class="link">知乎</span>
+            </div>
+          </div>
+          <img class="thumb" src="https://pica.zhimg.com/50/v2-f946766e73a2a167ac9f274d2d2507ac_400x224.jpg" alt="" loading="lazy">
+        </li>
+    </ul>
+  </div>
+</body>
+</html>
