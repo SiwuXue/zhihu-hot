@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知乎热榜 · 历史日期</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:opsz,wght@6..72,300;6..72,500;6..72,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-1: #0f1012;
+      --bg-2: #1a1b1f;
+      --ink: #f4f1ea;
+      --muted: #b5b0a5;
+      --accent: #f4b942;
+      --card: rgba(255,255,255,0.06);
+      --stroke: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Newsreader", serif;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 20% -10%, #2a261c 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 120% 0%, #2a1f2f 0%, transparent 55%),
+                  linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 2px;
+      font-size: clamp(32px, 6vw, 52px);
+      margin: 0;
+    }
+    .meta { color: var(--muted); font-size: 12px; }
+    .back {
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(244,185,66,0.45);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .day-card {
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: var(--card);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .day-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .day-date { font-size: 16px; letter-spacing: 0.5px; }
+    .day-json {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      border-bottom: 1px dashed rgba(244,185,66,0.5);
+    }
+    .day-count { color: var(--muted); font-size: 12px; }
+    .day-list { margin: 0; padding-left: 18px; color: var(--ink); }
+    .day-list a { color: var(--ink); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1 class="title">历史日期</h1>
+        <div class="meta">更新时间 2026/2/11 22:17:02</div>
+      </div>
+      <a class="back" href="index.html">返回首页</a>
+    </div>
+    <div class="grid">
+      
+      <article class="day-card">
+        <div class="day-head">
+          <div class="day-date">2026-02-11</div>
+          <a class="day-json" href="data/2026-02-11.json">JSON</a>
+        </div>
+        <div class="day-count">64 条</div>
+        <ul class="day-list">
+          <li><a href="https://www.zhihu.com/question/2004525707066306750" target="_blank" rel="noopener noreferrer">Seedance 2.0 将对视频行业带来怎样的冲击与颠覆？为什么冯骥称深感震撼的同时也有一丝迷茫？</a></li>
+<li><a href="https://www.zhihu.com/question/36246233" target="_blank" rel="noopener noreferrer">来做客的孩子临走时带走几只玩具，我的孩子抗拒并一直哭，要怎么开导？</a></li>
+<li><a href="https://www.zhihu.com/question/281982209" target="_blank" rel="noopener noreferrer">你在清华上过最牛的课是什么？</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
