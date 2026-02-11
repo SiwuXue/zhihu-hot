@@ -29,17 +29,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
+          cache: "npm"
 
       - name: Install deps
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Run crawler
-        run: pnpm start
+        run: npm start
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -60,6 +56,7 @@ jobs:
           fi
           git commit -m "chore: update zhihu hot list"
           git push
+
   deploy:
     needs: crawl
     runs-on: ubuntu-latest
@@ -73,4 +70,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

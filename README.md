@@ -1,4 +1,4 @@
-﻿# zhihu-hot
+﻿# spider-zhihu-hot
 
 知乎热榜抓取器，支持本地运行与 GitHub Actions 自动更新，自动生成美观的 `out/index.html` 并发布到 GitHub Pages。
 
@@ -15,8 +15,8 @@
 3. 安装依赖并运行
 
 ```bash
-pnpm install
-pnpm start
+npm install
+npm start
 ```
 
 ## GitHub Actions 使用
@@ -29,7 +29,14 @@ pnpm start
 [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes((Get-Content -Raw .\env\cookies.json)))
 ```
 
-### 2) 启用 GitHub Pages
+### 2) 生成 package-lock.json
+GitHub Actions 已改为使用 `npm ci`，需要提交 `package-lock.json`。请在本地执行一次：
+```bash
+npm install
+```
+并提交生成的 `package-lock.json`。
+
+### 3) 启用 GitHub Pages
 Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 
 工作流会自动：
