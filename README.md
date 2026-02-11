@@ -5,7 +5,9 @@
 ## 功能
 - 抓取知乎热榜并输出 JSON
 - 按日期保存 `out/data/YYYY-MM-DD.json`
-- 生成美观首页 `out/index.html`
+- 生成美观首页 `out/index.html`（含 Top10 滚动卡片）
+- 生成历史日期切换页 `out/history.html`
+- 输出 RSS/JSON 订阅 `out/feed.xml` / `out/feed.json`
 - 自动更新 README 中的当天信息
 - GitHub Actions 定时抓取 + GitHub Pages 部署
 
@@ -42,6 +44,7 @@ Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 工作流会自动：
 - 抓取热榜
 - 生成 `out/index.html`
+- 生成 `out/history.html`、`out/feed.xml`、`out/feed.json`
 - 提交 `README.md` 与 `out/data/*.json`
 - 部署到 GitHub Pages
 
@@ -49,6 +52,9 @@ Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 - `out/data/hotLinks.json`：当次去重结果
 - `out/data/YYYY-MM-DD.json`：当天累计结果
 - `out/index.html`：可直接部署的首页
+- `out/history.html`：历史日期切换页
+- `out/feed.xml`：RSS 订阅
+- `out/feed.json`：JSON Feed 订阅
 
 <!-- HOTLINKS_START -->
 <!-- HOTLINKS_END -->

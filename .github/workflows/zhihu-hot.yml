@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md out/index.html out/data/*.json || true
+          git add README.md out/index.html out/history.html out/feed.xml out/feed.json out/data/*.json || true
           if git diff --staged --quiet; then
             echo "No changes to commit."
             exit 0

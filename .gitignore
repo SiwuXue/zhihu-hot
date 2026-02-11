@@ -91,6 +91,9 @@ out
 !out/data/
 !out/data/**
 !out/index.html
+!out/history.html
+!out/feed.xml
+!out/feed.json
 
 # Nuxt.js build / generate output
 .nuxt
@@ -139,4 +142,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
 
