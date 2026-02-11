@@ -57,10 +57,10 @@ Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 - `out/feed.json`：JSON Feed 订阅
 
 <!-- HOTLINKS_START -->
-## 当天热点 (2026-02-11)
+## 当天热点 (2026-02-12)
 
-- 数据文件: [out/data/2026-02-11.json](out/data/2026-02-11.json)
-- 条目数: 64
+- 数据文件: [out/data/2026-02-12.json](out/data/2026-02-12.json)
+- 条目数: 30
 
 说明：运行脚本后会自动更新本段内容。
 <!-- HOTLINKS_END -->
