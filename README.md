@@ -1,4 +1,4 @@
-﻿# spider-zhihu-hot
+﻿# zhihu-hot
 
 知乎热榜抓取器，支持本地运行与 GitHub Actions 自动更新，自动生成美观的 `out/index.html` 并发布到 GitHub Pages。
 
