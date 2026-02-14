@@ -1,5 +1,6 @@
 const https = require("https");
 const { buildApiHeaders } = require("../utils/headers");
+const { getCookieHeader } = require("../utils/cookies");
 
 async function fetchJson(url, headers) {
     if (typeof fetch === "function") {
@@ -38,6 +39,10 @@ async function fetchHotlistViaApi(options = {}) {
         hotUrl: options.hotUrl,
         userAgent: options.userAgent,
     });
+    const cookieHeader = getCookieHeader();
+    if (cookieHeader) {
+        headers.cookie = cookieHeader;
+    }
     const payload = await fetchJson(options.hotApiUrl, headers);
     return Array.isArray(payload && payload.data) ? payload.data : [];
 }

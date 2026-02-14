@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const { loadCookies } = require("../utils/cookies");
 
 async function fetchHotlistViaPuppeteer(options = {}) {
     const url = options.url || "https://www.zhihu.com/";
@@ -37,6 +38,12 @@ async function fetchHotlistViaPuppeteer(options = {}) {
         }
 
         await safeGoto(url, "home");
+
+        const cookies = loadCookies();
+        if (cookies.length) {
+            await page.setCookie(...cookies);
+        }
+
         await safeGoto(hotUrl, "hot");
         await page.waitForSelector(".HotList-list section", { timeout: 60000 });
 
