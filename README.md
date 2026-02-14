@@ -59,13 +59,8 @@ Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 <!-- HOTLINKS_START -->
 ## 当天热点 (2026-02-14)
 
-<<<<<<< HEAD
 - 数据文件: [out/data/2026-02-14.json](out/data/2026-02-14.json)
-- 条目数: 35
-=======
-- 数据文件: [out/data/2026-02-12.json](out/data/2026-02-12.json)
-- 条目数: 81
->>>>>>> 4a7afb43ac8e3b0293ceb9d029a3dba35111eb8e
+- 条目数: 42
 
 说明：运行脚本后会自动更新本段内容。
 <!-- HOTLINKS_END -->
