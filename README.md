@@ -60,7 +60,7 @@ Settings → Pages → Build and deployment 选择 **GitHub Actions**。
 ## 当天热点 (2026-02-25)
 
 - 数据文件: [out/data/2026-02-25.json](out/data/2026-02-25.json)
-- 条目数: 30
+- 条目数: 35
 
 说明：运行脚本后会自动更新本段内容。
 <!-- HOTLINKS_END -->
